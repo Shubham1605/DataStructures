@@ -1,0 +1,38 @@
+import java.util.Scanner; 
+import java.io.*;
+import java.lang.*;
+
+public class solution {
+    
+    static int resA;
+    static int resB;
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        //System.out.println(t);
+        for (int n = 0; n < t; n++) {
+            int inpLen = sc.nextInt();
+            int a =sc.nextInt();
+            int b =sc.nextInt();
+            int c =sc.nextInt();
+            int d =sc.nextInt();
+            resA=((a*c)-(b*d));
+            resB=((a*d)+(b*c));
+            while(inpLen-2>0){
+                complexProduct(sc.nextInt(),sc.nextInt());
+                inpLen--;
+            }
+            System.out.println(resA+" "+resB);
+        }
+
+    }
+    
+    public static void complexProduct(int c,int d){
+        int a=resA;
+        int b=resB;
+        resA=((a*c)-(b*d));
+        resB=((a*d)+(b*c));
+        //System.out.println(resA+" "+resB+" "+c+" "+d);
+    }
+}
